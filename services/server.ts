@@ -4,6 +4,7 @@ import client from "./connection/db";
 import userRoute from "./routes/userRouter";
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
+import columnRouter from "./routes/columnRouter";
 dotenv.config();
 
 const app: Express = express();
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/user", userRoute);
+app.use('/column',columnRouter)
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
