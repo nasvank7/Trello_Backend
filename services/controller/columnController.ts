@@ -35,6 +35,7 @@ const columnController = {
         where: { id: parseInt(columnId) },
         data: { title },
       });
+      console.log(updatedColumn);
 
       res.json(updatedColumn);
     } catch (error) {}
